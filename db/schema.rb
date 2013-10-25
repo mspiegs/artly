@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131024061831) do
+ActiveRecord::Schema.define(:version => 20131025171648) do
 
   create_table "art_types", :force => true do |t|
     t.string   "type_of_art"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20131024061831) do
     t.datetime "updated_at",         :null => false
     t.integer  "piece_id"
     t.integer  "location_id"
+    t.string   "name"
   end
 
 end

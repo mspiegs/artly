@@ -16,6 +16,10 @@ class ProductionsController < ApplicationController
     	end
 	end
 
+	def edit
+		@production = Production.find(params[:id])
+	end
+
 	def new
 		#@piece = Piece.find(params[:piece_id])
 		@production = @piece.productions.new

@@ -1,21 +1,23 @@
 <p id="notice"><%= notice %></p>
-<table class="table table-hover">
-  <tr><td style="width: 200px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Name:</td><td style="font-size: 25px;"><%= best_in_place @piece, :name %></td></tr>
-  <tr><td style="width: 200px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Type of Art:</td><td style="font-size: 25px;"><%= @piece.art_type.type_of_art %></td></tr>
-  <tr><td style="width: 200px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Created on:</td><td style="font-size: 25px;"><%= best_in_place @piece, :date %></td></tr>
-  <tr><td style="width: 200px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Number of pieces in Art piece: </td><td style="font-size: 25px;"><%= @piece.number_of_pieces %></td></tr>
-  <tr><td style="width: 200px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Number of productions:</td><td style="font-size: 25px;"><%= @piece.productions.count %></td></tr>
-  <tr><td style="width: 200px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Location of piece:</td><td style="font-size: 25px;"><%= @piece.location.name %></td></tr>
-  <tr><td style="width: 200px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Delivery date:</td><td style="font-size: 25px;"><%= @piece.delivery_date %></td></tr>
-  <tr><td style="width: 200px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Removal date:</td><td style="font-size: 25px;"><%= @piece.removal_date %></td></tr>
+<table class="show_table">
+  <tr><td style="width: 300px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Name:</td><td style="font-size: 25px; text-align: right;"><%= best_in_place @piece, :name %></td></tr>
+  <tr><td style="width: 300px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Type of Art:</td><td style="font-size: 25px; text-align: right;"><%= @piece.art_type.type_of_art %></td></tr>
+  <tr><td style="width: 300px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Created on:</td><td style="font-size: 25px; text-align: right;"><%= best_in_place @piece, :date %></td></tr>
+  <tr><td style="width: 300px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Number of pieces in Art piece: </td><td style="font-size: 25px; text-align: right;"><%= @piece.number_of_pieces %></td></tr>
+  <tr><td style="width: 300px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Number of productions:</td><td style="font-size: 25px; text-align: right;"><%= @piece.productions.count %></td></tr>
+  <tr><td style="width: 300px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Location of piece:</td><td style="font-size: 25px; text-align: right;"><%= @piece.location.name %></td></tr>
+  <tr><td style="width: 300px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Delivery date:</td><td style="font-size: 25px; text-align: right;"><%= @piece.delivery_date %></td></tr>
+  <tr><td style="width: 300px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Removal date:</td><td style="font-size: 25px; text-align: right;"><%= @piece.removal_date %></td></tr>
 </table>
 </br>
 </br>
 </br>
 <table class="table table-hover ">
-  <th>Productions for <%= @piece.name %></th>
+  <tr style="background:-o-linear-gradient(bottom, #FAFAFA 5%, #afafaf 100%); background:-webkit-gradient( linear, left top, left bottom, color-stop(0, #FAFAFA), color-stop(1, #C2C2C2));
+  background:-moz-linear-gradient( center top, #d8d8d8 5%, #afafaf 100% );
+  background: -o-linear-gradient(top,#d8d8d8,afafaf);"><th>Productions for <%= @piece.name %></th><th>Location of Production</th><th></th><th></th></tr>
 <% @piece.productions.each do |production| %>
-  <tr><td style="width: 200px;"><%= production.number %></td><td><%= production.location.name %></td></tr>
+  <tr><td style="width: 300px; "><%= production.number %></td><td><%= production.location.name %></td><td><%= production.name %></td><td><%= button_to "Edit", edit_piece_production_path(@piece, production), :method => "get", class: "btn btn-warning btn-xs" %></td></tr>
 <% end %>
 </table>
 

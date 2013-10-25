@@ -16,4 +16,14 @@
 .piece_show_title p { font-size: 25px;}
 .piece_show b {font-size: 15px;}
 
-.show_table table td:nth-child(odd) { font-size: 15px;}
+.show_table tr { width: 300px; border-bottom: 2px solid #A0A0A0;}
+.show_table {width: 600px;}
+
+.nice_table tr{
+		background:-o-linear-gradient(bottom, #d8d8d8 5%, #afafaf 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d8d8d8), color-stop(1, #afafaf) );
+	background:-moz-linear-gradient( center top, #d8d8d8 5%, #afafaf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#d8d8d8", endColorstr="#afafaf");	background: -o-linear-gradient(top,#d8d8d8,afafaf);
+
+	background-color:#d8d8d8;
+	
+}}

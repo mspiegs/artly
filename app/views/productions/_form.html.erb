@@ -16,9 +16,15 @@
     <%= f.label :number %><span style="font-size: 10px; font-color: #ff0000;">    Last number was <%= @production_number - 1 %></span><br />
     <% if @piece.productions != nil %>
       <%= f.text_field :number, :value => @production_number %>
+    <% elsif @piece.production.number > 0 %>
+      <% f.text_field :nmuber, :value => @piece.production.number %>
     <% else %>
       <%= f.text_field :number %>
     <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
   </div>
   <div class="form-group">
     <%= f.label :location %><br />
