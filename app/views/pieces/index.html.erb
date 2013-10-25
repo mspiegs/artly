@@ -1,0 +1,38 @@
+<h1>My Art</h1>
+
+<table class="table table-hover table-responsive">
+<tbody>
+  <tr>
+    <th style="width: 383px;">Name</th>
+    <th style="width: 171px;">Type</th>
+    <th style="width: 55px;">Date</th>
+    <th style="width: 50px; text-align: center;"># pieces</th>
+    <th style="width: 30px;"># productions</th>
+    <th style="width: 20px; padding-right: 2px;"></th>
+    <th style="width: 25px;"></th>
+    <th style="width: 25px;"></th>
+  </tr>
+
+<% @pieces.each do |piece| %>
+  <tr style="height: 41px;">
+    <td><%= best_in_place piece, :name, :inner_class => "input-small" %></td>
+    <% a = piece.art_type_id %>
+    <% t = ArtType.find(a) %>
+    <td><%= best_in_place t, :type_of_art %></td>
+    <td><%= piece.date.strftime("%m-%d-%y")%></td>
+    <td style="text-align: center;"><%= piece.number_of_pieces %></td>
+    <td style="text-align: center;"><%= link_to piece.productions.count, piece_productions_path(piece) %></td>
+    <td style="padding: 8px 0px;"><%= button_to 'View', piece, :method => "get", class: "btn btn-primary btn-xs" %></td>
+    <td style="padding: 8px 0px;"><%= button_to 'Edit', edit_piece_path(piece), :method => "get", class: "btn btn-warning btn-xs" %></td>
+    <td style="padding: 8px 0px;"><%= button_to 'Delete', piece, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+<table>
+    <tr>
+        <td><%= button_to 'New Piece', new_piece_path, :method => "get", class: "btn btn-success" %></td> 
+    <tr/>
+</table>

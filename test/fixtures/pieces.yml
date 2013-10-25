@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  type: 
+  date: 2013-10-21
+  number_of_pieces: MyString
+  number_in_production: MyString
+  venue: MyString
+  delivery_date: 2013-10-21
+  removal_date: MyString
+
+two:
+  name: MyString
+  type: 
+  date: 2013-10-21
+  number_of_pieces: MyString
+  number_in_production: MyString
+  venue: MyString
+  delivery_date: 2013-10-21
+  removal_date: MyString

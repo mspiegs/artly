@@ -1,0 +1,19 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+/*.even {background-color: rgba(194, 194, 194, 0.8);}*/
+
+.piece_show_title p { font-size: 25px;}
+.piece_show b {font-size: 15px;}
+
+.show_table table td:nth-child(odd) { font-size: 15px;}

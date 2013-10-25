@@ -1,0 +1,45 @@
+<%= form_for(@piece) do |f| %>
+  <% if @piece.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@piece.errors.count, "error") %> prohibited this piece from being saved:</h2>
+
+      <ul>
+      <% @piece.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="form-group">
+    <%= f.label :art_type %><br />
+    <%= f.collection_select :art_type_id, ArtType.all, :id, :type_of_art, :promt => "Select an Art Type" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="form-group">
+    <%= f.label :number_of_pieces %><br />
+    <%= f.text_field :number_of_pieces %>
+  </div>
+  <div class="form-group">
+    <%= f.label :location %><br />
+    <%= f.collection_select :location_id, Location.all, :id, :name, :promt => "Select a location" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :delivery_date %><br />
+    <%= f.date_select :delivery_date %>
+  </div>
+  <div class="form-group">
+    <%= f.label :removal_date %><br />
+    <%= f.date_select :removal_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,43 @@
+<h1>Locations</h1>
+
+<table class="table table-hover table-responsive">
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Contact person</th>
+    <th>Phone</th>
+    <th>Notes</th>
+    <th style="width: 45px;"></th>
+    <th style="width: 45px;"></th>
+    <th style="width: 45px;"></th>
+  </tr>
+
+<% @locations.each do |location| %>
+  <tr>
+    <td><%= location.name %></td>
+    <td><%= location.address %></td>
+    <td><%= location.city %></td>
+    <td><%= location.state %></td>
+    <td><%= location.zip %></td>
+    <td><%= location.contact_person %></td>
+    <td><%= location.phone %></td>
+    <td><%= location.notes %></td>
+    <td><%= button_to 'View', location, :method => "get", class: "btn btn-primary" %></td>
+    <td><%= button_to 'Edit', edit_location_path(location), :method => "get", class: "btn btn-warning" %></td>
+    <td><%= button_to 'Delete', location, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+  </tr>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<table>
+    <tr>
+        <td><%= button_to 'New Location', new_location_path, :method => "get", class: "btn btn-success" %></td> 
+    <tr/>
+    <tr/>
+</table>
+

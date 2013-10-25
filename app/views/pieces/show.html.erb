@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<table class="table table-hover">
+  <tr><td style="width: 200px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Name:</td><td style="font-size: 25px;"><%= best_in_place @piece, :name %></td></tr>
+  <tr><td style="width: 200px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Type of Art:</td><td style="font-size: 25px;"><%= @piece.art_type.type_of_art %></td></tr>
+  <tr><td style="width: 200px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Created on:</td><td style="font-size: 25px;"><%= best_in_place @piece, :date %></td></tr>
+  <tr><td style="width: 200px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Number of pieces in Art piece: </td><td style="font-size: 25px;"><%= @piece.number_of_pieces %></td></tr>
+  <tr><td style="width: 200px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Number of productions:</td><td style="font-size: 25px;"><%= @piece.productions.count %></td></tr>
+  <tr><td style="width: 200px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Location of piece:</td><td style="font-size: 25px;"><%= @piece.location.name %></td></tr>
+  <tr><td style="width: 200px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Delivery date:</td><td style="font-size: 25px;"><%= @piece.delivery_date %></td></tr>
+  <tr><td style="width: 200px; font-size: 15px; padding-top: 15px; color: #A0A0A0 ;">Removal date:</td><td style="font-size: 25px;"><%= @piece.removal_date %></td></tr>
+</table>
+</br>
+</br>
+</br>
+<table class="table table-hover ">
+  <th>Productions for <%= @piece.name %></th>
+<% @piece.productions.each do |production| %>
+  <tr><td style="width: 200px;"><%= production.number %></td><td><%= production.location.name %></td></tr>
+<% end %>
+</table>
+
+<%= link_to 'Edit', edit_piece_path(@piece) %> |
+<%= link_to 'Back', pieces_path %>
+<%= button_to 'Add Production', new_piece_production_path(@piece), :method => "get", class: "btn btn-primary btn-xs" %>
